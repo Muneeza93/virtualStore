@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    header.card-header
+        .container
+            h4.card-title Products list
+            |&nbsp
+        div.form-row
+            div.col.form-group.col-md-12    
+                form.search(action='/product/productslist')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='Products' placeholder="Enter your search term ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th nameofItem
+                th make
+                th dateofentry
+                th category
+                th serialno
+                th price
+                th initialpay
+                th payinterval
+                th color
+                th description
+                th numberinstock
+                th itemphoto
+                th 
+        tbody
+            each product in productslist
+                tr
+                    td #{product.nameofItem}
+                    td #{product.make}
+                    td #{product.dateofentry}
+                    td #{product.category}
+                    td #{product.serialno}
+                    td #{product.price}
+                    td #{product.initialpay}
+                    td #{product.payinterval}
+                    td #{product.color}
+                    td #{product.description}
+                    td #{product.numberinstock}
+                    td #{product.itemphoto}
+                    td
+                        form(method="POST" action='/product/delete')
+                            input(type="hidden", placeholder="", name="id", value=product._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete

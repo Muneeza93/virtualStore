@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    header.card-header
+        .container
+            h4.card-title salesAgent list
+            |&nbsp
+        div.form-row
+            div.col.form-group.col-md-12    
+                form.search(action='/sales/salesAgentlist')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='employee' placeholder="Enter your search term ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th firstName
+                th secondName
+                th email
+                th password
+                th RetypePassword
+                th phone
+                th gender
+                th EmployeeID
+                th NationalID
+                th
+        tbody
+            each salesagent in salesAgentlist
+                tr
+                    td #{salesagent.firstName}
+                    td #{salesagent.secondName}
+                    td #{salesagent.email}
+                    td #{salesagent.password}
+                    td #{salesagent.RetypePassword}
+                    td #{salesagent.phone}
+                    td #{salesagent.gender}
+                    td #{salesagent.EmployeeID}
+                    td #{salesagent.NationalID}
+                    td
+                        form(method="POST" action='/sales/delete')
+                            input(type="hidden", placeholder="", name="id", value=salesagent._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete

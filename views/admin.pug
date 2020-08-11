@@ -1,0 +1,74 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                .dropdown
+                    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Account
+                    .dropdown-menu(aria-labelledby='dropdownMenu2')
+                        a.button.dropdown-item(href='/users/register') Register
+                        a.button.dropdown-item(href='/users') Admin Login
+                        a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+    section.admin
+        .container.admin-panel
+            h2 Admin Dashboard
+            .row
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Sales Agent
+                            p.card-text
+                                | With supporting text below as a natural lead-in to additional content.
+                            a.btn.btn-primary(href='/sales') Submit
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Sales Agent list
+                            p.card-text
+                                | With supporting text below as a natural lead-in to additional content.
+                            a.btn.btn-primary(href='/sales/salesAgentlist') Submit
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Products
+                            p.card-text
+                                | With supporting text below as a natural lead-in to additional content.
+                            a.btn.btn-primary(href='/product') Submit
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Product list
+                            p.card-text
+                                | With supporting text below as a natural lead-in to additional content.
+                            a.btn.btn-primary(href='/product/productslist') Submit
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Customers
+                            p.card-text
+                                |with supporting text below.
+                            a.btn.btn-primary(href='/customer') Submit
+                .col-sm-3
+                    .card
+                        .card-body
+                            h5.card-title Customers list
+                            p.card-text
+                                |with supporting text below.
+                            a.btn.btn-primary(href='/customer/customerlist') Submit
+
+
+        

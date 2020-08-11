@@ -1,0 +1,68 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                .dropdown
+                    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Account
+                    .dropdown-menu(aria-labelledby='dropdownMenu2')
+                        a.button.dropdown-item(href='/users/register') Register
+                        a.button.dropdown-item(href='/users') Admin Login
+                        a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+    .wrapper
+        h3 Registration form
+        .form-container
+            form(name="agentForm" id="agents" action='/sales/salesAgent' method="POST")
+                .input-name
+                    i.fa.fa-user.lock
+                    input.name(type='text' name='firstName' placeholder='Firstname')
+                    #fnameErr.error
+                    span
+                        i.fa.fa-user.lock
+                        input.name(type='text' name='secondName' placeholder='Secondname')
+                        #snameErr.error
+                .input-name
+                    i.fa.fa-envelope.email
+                    input.text-name(type='email' name='email' placeholder='Email')
+                    #emailErr.error
+                .input-name
+                    i.fa.fa-lock.lock
+                    input.text-name(type='password' name='password' placeholder='Password')
+                    #passwordErr.error
+                .input-name
+                    i.fa.fa-lock.lock
+                    input.text-name(type='password' name='RetypePassword' placeholder='Re-type Password')
+                    #passwordErr.error
+                .input-name
+                    i.fa.fa-mobile.lock(aria-hidden='true')
+                    input.text-name(type='tel' name='phone' placeholder='phone')
+                    #phoneErr.error
+                .input-name
+                    input#male(type='checkbox' name='gender')
+                    label.gender(for='male') Male
+                    input#female(type='checkbox' name='gender')
+                    label.gender(for='female') Female
+                .input-name
+                    input.text-name(type='text' name='EmployeeID' placeholder='EmployeeID')
+                    #employeeIDErr.error
+                .input-name
+                    input.text-name(type='text' name='NationalID' placeholder='NationalID')
+                    #nationalIDErr.error
+                .input-name
+                    input.button(type='submit' name='submit' value='Submit')
+
+                

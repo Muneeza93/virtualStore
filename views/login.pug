@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                .dropdown
+                    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Account
+                    .dropdown-menu(aria-labelledby='dropdownMenu2')
+                        a.button.dropdown-item(href='/users/register') Register
+                        a.button.dropdown-item(href='/users') Admin Login
+                        a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+    .wrapper
+        h3 Login
+        .form-container
+            form(action='/users' method="POST")
+                .input-name
+                    i.fa.fa-envelope.email
+                    input.text-name(type='email' name='email' placeholder=' Enter Email')
+                .input-name
+                    i.fa.fa-lock.lock
+                    input.text-name(type='password' name='password' placeholder='Enter Password')
+                .input-name
+                    input.button(type='submit' name='Login' value='Login')
+            p.lead.mt-4
+                | No Account? 
+                a(href='/users/register') Register

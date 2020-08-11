@@ -1,0 +1,258 @@
+extends layout
+
+block content
+  .first-nav-bar
+    .logo
+      i.fa.fa-shopping-basket
+      h4 COVID-STORE
+      img(src='' width='125px' alt='')
+    nav
+      ul#MenuItems
+        li
+          a.button(href='/index') Home
+        li
+          a.button(href='') Products
+        li
+          a.button(href='') About
+        li
+          a.button(href='') Contact
+        .dropdown
+          button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            | Account
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            a.button.dropdown-item(href='/users/register') Register
+            a.button.dropdown-item(href='/users') Admin Login
+            a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+  section.header
+    .side-bar
+      ul
+        li
+          | Furniture
+          i.fa.fa-angle-right(aria-hidden='true')
+          ul
+            li menu-1
+            li menu-1
+            li menu-1
+            li menu-1
+        li
+          | Fitness kits
+          i.fa.fa-angle-right(aria-hidden='true')
+          ul
+            li menu-1
+            li menu-1
+            li menu-1
+            li menu-1
+        li
+          | Electronics
+          i.fa.fa-angle-right(aria-hidden='true')
+          ul
+            li menu-1
+            li menu-1
+            li menu-1
+            li menu-1
+        li
+          | Machinery
+          i.fa.fa-angle-right(aria-hidden='true')
+          ul
+            li menu-1
+            li menu-1
+            li menu-1
+            li menu-1
+    .slider
+      #slider.carousel.slide.carousel-fade(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='img/furniture 1.jpg' alt='...')
+          #weights.carousel-item
+            img.d-block.w-100(src='img/wooden_furniture.jpeg' alt='...')
+          .carousel-item
+            img.d-block.w-100(src='img/electronics 1.jpg' alt='...')
+          .carousel-item
+            img.d-block.w-100(src='img/fitbit.jpg' alt='...')
+        ol.carousel-indicators
+          li.active(data-target='#slider' data-slide-to='0')
+          li(data-target='#slider' data-slide-to='1')
+          li(data-target='#slider' data-slide-to='2')
+          li(data-target='#slider' data-slide-to='3')
+  //- // -----------------featured products--------
+  section.featured-categories
+    .container
+      .row
+        .col-md-4
+          img(src='img/stool.jpeg' alt='')
+        .col-md-4
+          img(src='img/camera.jpg' alt='')
+        .col-md-4
+          img(src='img/electronics 2.jpg' alt='')
+  //- // -------------------on sale products---------
+  section.on-sale
+    .container
+      .title-box
+        h2 Machinery
+      .row
+        .col-md-3
+          .top-product
+            img(src='img/machinery 1.jpeg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/machinery 2.jpg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/machinery 3.jpg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/machinery 4.jpeg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+  //- // -----------------------fitness kits--------------------
+  section.on-sale
+    .container
+      .title-box
+        h2 fitness-kits
+      .row
+        .col-md-3
+          .top-product
+            img(src='img/apple watch.jpg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/weights.jpg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/weights 4.jpeg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+        .col-md-3
+          .top-product
+            img(src='img/weights 5.jpeg' alt='')
+            .right-side
+              button.btn.btn-secondary(type='button' title='Shop Now')
+                i.fa.fa-eye
+              button.btn.btn-secondary(type='button' title='Add to wishlist')
+                i.fa.fa-heart-o
+              button.btn.btn-secondary(type='button' title='Add to Cart')
+                i.fa.fa-shopping-cart
+          .product-bottom-text-center
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            h3 GAP
+            h5 UGX.130,000,000
+  //- // ---------------------brands-----------------
+  section.brands
+    .container
+      .row
+        .col-md-3.brands-box
+          img(src='img/apple logo.jpg' alt='')
+        .col-md-3.brands-box
+          img(src='img/ikea logo.jpg' alt='')
+        .col-md-3.brands-box
+          img(src='img/john deere.png' alt='')
+        .col-md-3.brands-box
+          img(src='img/peloton logo.jpg' alt='')
+
+  
+
+  

@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                .dropdown
+                    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Account
+                    .dropdown-menu(aria-labelledby='dropdownMenu2')
+                        a.button.dropdown-item(href='/users/register') Register
+                        a.button.dropdown-item(href='/users') Admin Login
+                        a.button.dropdown-item(href='/sales') Agent Login
+    .wrapper
+        h3 Client form
+        .form-container
+            form(action='/customer' method="POST")
+                .input-name
+                    i.fa.fa-user.lock
+                    input.name(type='text' name='firstName' placeholder='Firstname')
+                    span
+                        i.fa.fa-user.lock
+                        input.name(type='text' name='secondName' placeholder='Secondname')
+                .input-name
+                    i.fa.fa-envelope.email
+                    input.text-name(type='email' name='email' placeholder='Email')
+                .input-name
+                    i.fa.fa-location-arrow(aria-hidden='true')
+                    input.text-name(type='location' name='location' placeholder='location')
+                .input-name
+                    i.fa.fa-id-card(aria-hidden='true')
+                    input.text-name(type='nationalid' name='nationalid' placeholder='National id')
+                .input-name
+                    i.fa.fa-mobile.lock(aria-hidden='true')
+                    input.text-name(type='tel' name='phone' placeholder='phone')
+                .input-name
+                    input#male(type='checkbox' name='gender')
+                    label.gender(for='male') Male
+                    input#female(type='checkbox' name='gender')
+                    label.gender(for='female') Female
+                .input-name
+                    input.text-name(type='text' name='itemname' placeholder='item name')
+                .input-name
+                    input.text-name(type='text' name='itemserialno' placeholder='item serial no')
+                .input-name
+                    input.text-name(type='text' name='datepay' placeholder='date of pay')
+                .input-name
+                    input.text-name(type='text' name='nextpayment' placeholder='next date of payment')
+                .input-name
+                    input.text-name(type='text' name='amountpayable' placeholder='amount next payable')
+                .input-name
+                    input.text-name(type='text' name='refno' placeholder='ref.number')
+                .input-name
+                    input.text-name(type='text' name='purchasereceipt' placeholder='purcahse receipt')    
+                .input-name
+                    input.button(type='submit' name='submit' value='Submit')
+
+                

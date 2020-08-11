@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                    .dropdown
+                        button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Account
+                        .dropdown-menu(aria-labelledby='dropdownMenu2')
+                            a.button.dropdown-item(href='/users/register') Register
+                            a.button.dropdown-item(href='/users') Admin Login
+                            a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+    .wrapper
+        h3 Registration form
+        .form-container
+            form(name="productsForm" id="product" action='/product/products' method="POST" enctype="multipart/form-data")
+                .input-name
+                    input.name(type='text' name='nameofItem' placeholder='Name of item')
+                    #nameofItemErr.error
+                    span
+                        input.name(type='text' name='make' placeholder='Make')
+                        #makeErr.error
+                .input-name
+                    input.text-name(type='date' name='dateofentry' placeholder='Date of entry')
+                .input-name
+                    input.text-name(type='text' name='category' placeholder='Category')
+                .input-name
+                    input.text-name(type='number' name='serialno' placeholder='Serial number')
+                    #serialnoErr.error
+                .input-name
+                    input.text-name(type='number' name='price' placeholder='Price')
+                    #priceErr.error
+                .input-name
+                    input.text-name(type='number' name='initialpay' placeholder='Initial Pay')
+                    #initialpayErr.error
+                .input-name
+                    input.text-name(type='number' name='payinterval' placeholder='Pay Interval')
+                    #payintervalErr.error
+                .input-name
+                    input.text-name(type='text' name='color' placeholder='Color')
+                .input-name
+                    textarea(name='description' id='' cols='30' rows='10' placeholder="Description")
+                .input-name
+                    input.text-name(type='number' name='numberinstock' placeholder='Number in stock')
+                .input-name
+                    input.text-name(type='file' name='itemphoto' placeholder='Item Photo')
+                .input-name
+                    input.button(type='submit' value='Submit')
+    
