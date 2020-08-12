@@ -1,7 +1,7 @@
 const express = require('express');
-const Customers = require('../models/clientModel')
-
 const router = express.Router();
+
+const Customers = require('../models/clientModel')
 
 router.get('/', (req,res) => {
  res.render('customer')
@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
 router.get('/customerlist', async (req,res) => {
     try{
         const customer = await Customers.find();
-        console.log(customer);
+        // console.log(customer);
         res.render("customerlist",{ customerlist: customer});
     }catch (error) {
         console.log(error);
@@ -18,12 +18,17 @@ router.get('/customerlist', async (req,res) => {
 });
 
 router.post("/customer", async (req, res) => {
-    console.log(req.body);
-    const customers = new customer(req.body);
+    //console.log(req.body);
+    const customers = new Customers(req.body);
     try{
-        const savedcustomer = await customers.save();
-              res.redirect('/customer/customerlist');
-              console.log(savedcustomer);
+        const savedcustomer = await customers.save((err)=>{
+            if (err) {
+                console.log(err)
+            } else {
+                res.redirect('/customer/customerlist');
+            }
+        });
+              //console.log(savedcustomer);
             } catch(error){
               console.log(error);
             }

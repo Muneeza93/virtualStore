@@ -26,7 +26,7 @@ block content
     .wrapper
         h3 Client form
         .form-container
-            form(action='/customer' method="POST")
+            form(action='/customer/customer' method="POST")
                 .input-name
                     i.fa.fa-user.lock
                     input.name(type='text' name='firstName' placeholder='Firstname')
@@ -46,25 +46,25 @@ block content
                     i.fa.fa-mobile.lock(aria-hidden='true')
                     input.text-name(type='tel' name='phone' placeholder='phone')
                 .input-name
-                    input#male(type='checkbox' name='gender')
+                    input#male(type='checkbox' name='gender' value='male')
                     label.gender(for='male') Male
-                    input#female(type='checkbox' name='gender')
+                    input#female(type='checkbox' name='gender' value='female')
                     label.gender(for='female') Female
                 .input-name
                     input.text-name(type='text' name='itemname' placeholder='item name')
                 .input-name
-                    input.text-name(type='text' name='itemserialno' placeholder='item serial no')
+                    input.text-name(type='number' name='itemserialno' placeholder='item serial no')
                 .input-name
-                    input.text-name(type='text' name='datepay' placeholder='date of pay')
+                    input.text-name(type='date' name='datepay' placeholder='date of pay')
                 .input-name
-                    input.text-name(type='text' name='nextpayment' placeholder='next date of payment')
+                    input.text-name(type='date' name='nextpayment' placeholder='next date of payment')
                 .input-name
-                    input.text-name(type='text' name='amountpayable' placeholder='amount next payable')
+                    input.text-name(type='number' name='amountpayable' placeholder='amount next payable')
                 .input-name
-                    input.text-name(type='text' name='refno' placeholder='ref.number')
+                    input.text-name(type='number' name='refno' placeholder='ref.number')
                 .input-name
                     input.text-name(type='text' name='purchasereceipt' placeholder='purcahse receipt')    
                 .input-name
-                    input.button(type='submit' name='submit' value='Submit')
+                    input.button(type='submit' value='Submit')
 
                 

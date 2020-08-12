@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='') Products
+                li
+                    a.button(href='') About
+                li
+                    a.button(href='') Contact
+                    .dropdown
+                        button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Account
+                        .dropdown-menu(aria-labelledby='dropdownMenu2')
+                            a.button.dropdown-item(href='/users/register') Register
+                            a.button.dropdown-item(href='/users') Admin Login
+                            a.button.dropdown-item(href='/sales/agentlogin') Agent Login
+    header.card-header
+        .container
+            h4.card-title Products list
+            |&nbsp
+        div.form-row
+            div.col.form-group.col-md-12    
+                form.search(action='/customer/customerlist')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='Products' placeholder="Enter your search term ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th firstName
+                th secondName
+                th email
+                th location
+                th nationalid
+                th phone
+                th gender
+                th itemname
+                th itemserialno
+                th datepay
+                th nextpayment
+                th amountpayable
+                th refno
+                th purchasereceipt
+                th
+        tbody
+            each customer in customerlist
+                tr
+                    td #{customer.firstName}
+                    td #{customer.secondName}
+                    td #{customer.email}
+                    td #{customer.location}
+                    td #{customer.nationalid}
+                    td #{customer.phone}
+                    td #{customer.gender}
+                    td #{customer.itemname}
+                    td #{customer.itemserialno}
+                    td #{customer.datepay}
+                    td #{customer.nextpayment}
+                    td #{customer.amountpayable}
+                    td #{customer.refno}
+                    td #{customer.purchasereceipt}
+                    td
+                        form(method="POST" action='/product/delete')
+                            input(type="hidden", placeholder="", name="id", value=customer._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete

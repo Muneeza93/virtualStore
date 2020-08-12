@@ -11,10 +11,10 @@ const CustomerSchema = new mongoose.Schema({
     nationalid: String,
     phone: Number,
     gender: String,
-    itemname: Number,
+    itemname: String,
     itemserialno: Number,
-    datepay: Number,
-    nextpayment: Number,
+    datepay: String,
+    nextpayment: String,
     amountpayable: Number,
     refno: String,
     purchasereceipt: String

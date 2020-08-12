@@ -18,8 +18,8 @@ const Products = require('./routes/productsRoute');
 const Users = require('./routes/users');
 const Customers = require('./routes/clientRoute');
 
-//passport config
-require('./config/passport')(passport);
+// //passport config
+// require('./config/passport')(passport);
 
 //DB config
 require('dotenv/config');
@@ -54,25 +54,21 @@ app.use('/sales',SalesRoutes);
 app.use('/users',Users);
 app.use('/customer',Customers);
 
-//express session
-app.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true,
-}));
+// //express session
+// app.use(session({
+//   secret: 'secret',
+//   resave: true,
+//   saveUninitialized: true,
+// }));
 
 //passport middleware
+require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-//connect flash
-app.use(flash());
+// //connect flash
+// app.use(flash());
 
-
-
-app.get('/salesAgent', (req,res) => {
-  res.sendFile(__dirname + '/salesAgent.html')
-});
 
 
 //PORT

@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../models/UsersModel");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
+const {ensureAuthenticated} = require('../config/auth');
 
 const router = express.Router();
 
@@ -47,9 +48,12 @@ router.post("/register", (req, res) => {
 //   })(req, res, next);
 // });
 
-router.post("/", (req, res, next) => {
-    res.redirect("/users/admin");
+router.post("/login", (req, res, next) => {
   
+    res.redirect("/users/admin");
+
+  
+  (req, res,next);
 });
 
 router.get("/admin", (req, res) => {
