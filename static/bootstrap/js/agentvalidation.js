@@ -9,20 +9,20 @@ agent_Form.addEventListener('submit',(e) => {
     // Defining a function to validate form 
 
     // Retrieving the values of form elements 
-    var firstname = document.agentForm.firstName.value;
+    var firstname = document.agentForm.firstname.value;
     var secondname = document.agentForm.secondname.value;
     var email = document.agentForm.email.value;
-    var password = document.agentForm.password.value;
-    var retypepassword= document.agentForm.retypepassword.value;
-    var phone= document.agentForm.phone.value;
-    var employeeID= document.agentForm.employeeID.value;
-    var nationalID= document.agentForm.nationalID.value;
+    // var password = document.agentForm.password.value;
+    // var retypepassword= document.agentForm.retypepassword.value;
+    // var phone= document.agentForm.phone.value;
+    // var employeeID= document.agentForm.employeeID.value;
+     var nationalID= document.agentForm.nationalID.value;
     
 
 
     
 	// Defining error variables with a default value
-    var fnameErr = snameErr = emailErr = passwordErr = phoneErr = employeeIDErr = nationalIDErr = true;
+    var fnameErr = snameErr = emailErr = nationalIDErr = true;
     
     // Validate first name
     if(firstname == "") {
@@ -64,54 +64,44 @@ agent_Form.addEventListener('submit',(e) => {
         }
     }
 
-    // Validate password
-    if(password == "") {
-        printError("passwordErr", "Please enter password");
-    } else {
-        // Regular expression for basic password validation
-        var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-        if(regex.test(password) === false) {
-            printError("passwordErr", "Please enter a password");
-        } else{
-            printError("passwordErr", "");
-            passwordErr = false;
-        }
-    }
+    // // Validate password
+    // if(password == "") {
+    //     printError("passwordErr", "Please enter password");
+    // }  else{
+    //         printError("passwordErr", "");
+    //         passwordErr = false;
+    //     }
+    
 
-    // Validate retype password
-    if(retypepassword == "") {
-        printError("passwordErr", "Please enter your email address");
-    } else {
-        // Regular expression for basic email validation
-        var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-        if(regex.test(retypepassword) === false) {
-            printError("passwordErr", "Please enter a valid email address");
-        } else{
-            printError("passwordErr", "");
-            passwordErr = false;
-        }
-    }
+    // // Validate retype password
+    // if(retypepassword == "") {
+    //     printError("retypepasswordErr", "Please retype your password");
+    // }  else{
+    //         printError("retypepasswordErr", "");
+    //         retypepasswordErr = false;
+    //     }
     
-    // Validate mobile number
-    if(phone == "") {
-        printError("phoneErr", "Please enter your mobile number");
-    } else {
-        var regex = /^[1-9]\d{9}$/;
-        if(regex.test(phone) === false) {
-            printError("phoneErr", "Please enter a valid 10 digit mobile number");
-        } else{
-            printError("phoneErr", "");
-            phoneErr = false;
-        }
-    }
     
-    // Validate employeeID
-    if(employeeID == "Select") {
-        printError("employeeIDErr", "Please select your employee ID");
-    } else {
-        printError("employeeIDErr", "");
-        countryErr = false;
-    }
+    // // Validate mobile number
+    // if(phone == "") {
+    //     printError("phoneErr", "Please enter your mobile number");
+    // } else {
+    //     var regex = /^[1-9]\d{9}$/;
+    //     if(regex.test(phone) === false) {
+    //         printError("phoneErr", "Please enter a valid 10 digit mobile number");
+    //     } else{
+    //         printError("phoneErr", "");
+    //         phoneErr = false;
+    //     }
+    // }
+    
+    // // Validate employeeID
+    // if(employeeID == "") {
+    //     printError("employeeIDErr", "Please select your employee ID");
+    // } else {
+    //     printError("employeeIDErr", "");
+    //     countryErr = false;
+    // }
     
     // Validate national ID
     if(nationalID == "") {
@@ -127,11 +117,12 @@ agent_Form.addEventListener('submit',(e) => {
     }
     
     // Prevent the form from being submitted if there are any errors
-    if((fnameErr || snameErr || emailErr || passwordErr || phoneErr || employeeIDErr || nationalIDErr) == true) {
+    if((fnameErr || snameErr || emailErr || nationalIDErr) == true) {
         alert('failed')
-        return
+        e.preventDefault();
     } else {
         alert('successful')
+        e.currentTarget.submit();
     }
     // if((fnameErr || snameErr) == true) {
     //    e.preventDefault();

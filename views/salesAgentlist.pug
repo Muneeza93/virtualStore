@@ -16,28 +16,24 @@ block content
     table.table
         thead.thead-dark
             tr
-                th firstName
-                th secondName
+                th firstname
+                th secondname
                 th email
-                th password
-                th RetypePassword
                 th phone
                 th gender
-                th EmployeeID
-                th NationalID
+                th employeeID
+                th nationalID
                 th
         tbody
             each salesagent in salesAgentlist
                 tr
-                    td #{salesagent.firstName}
-                    td #{salesagent.secondName}
+                    td #{salesagent.firstname}
+                    td #{salesagent.secondname}
                     td #{salesagent.email}
-                    td #{salesagent.password}
-                    td #{salesagent.RetypePassword}
                     td #{salesagent.phone}
                     td #{salesagent.gender}
-                    td #{salesagent.EmployeeID}
-                    td #{salesagent.NationalID}
+                    td #{salesagent.employeeID}
+                    td #{salesagent.nationalID}
                     td
                         form(method="POST" action='/sales/delete')
                             input(type="hidden", placeholder="", name="id", value=salesagent._id)

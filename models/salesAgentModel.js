@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 //employeeschema
 const employeeSchema = new mongoose.Schema({
-    firstName: String,
-    secondName: String,
+    firstname: String,
+    secondname: String,
     email: String,
     password: String,
-    RetypePassword: String,
+    retypepassword: String,
     phone: Number,
     gender: String,
-    EmployeeID: String,
-    NationalID: String
+    employeeID: String,
+    nationalID: String
 });
 
 const salesAgent= mongoose.model('salesAgent', employeeSchema);
