@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    .first-nav-bar
+        .logo
+            i.fa.fa-shopping-basket
+            h4 COVID-STORE
+            img(src='' width='125px' alt='')
+        nav
+            ul#MenuItems
+                li
+                    a.button(href='/index') Home
+                li
+                    a.button(href='/details') Products
+                li
+                    a.button(href='/about') About
+                li
+                    a.button(href='') Contact
+                .dropdown
+                    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Account
+                    .dropdown-menu(aria-labelledby='dropdownMenu2')
+                        button.dropdown-item(type='button') Register
+                        button.dropdown-item(type='button') Login
+                        button.dropdown-item(type='button') Something else here
+        //- // --------------about us-----------
+    section.single-product
+        .container
+            .row
+                .col-md-5
+                    img(src='img/IMG-20180124-WA0026.jpg' alt='')
+            .col-md-7
+                p.new-arrival.text-center Team
+                h2 Covid stores
+                p
+                    | Covid stores is an online marketplace in Africa for electronics, and machinery among others.The company is also a
+                    | logistics service, which enables the shipment and delivery of packages from sellers to consumers, and a
+                    | payment service, which facilitates transactions among participants active and Covid&apos;s platform in selected
+                    | markets.
+                p
+                    | Interested in joining this amazing group of dreamers click on the apply button below to see available vacancies
+                label Careers: 
+                input(type='text' value='1')
+                button.btn.btn-primary(type='button') Apply
+
