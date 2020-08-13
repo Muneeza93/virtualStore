@@ -71,6 +71,6 @@ block content
                     td #{customer.refno}
                     td #{customer.purchasereceipt}
                     td
-                        form(method="POST" action='/product/delete')
+                        form(method="POST" action='/customer/delete')
                             input(type="hidden", placeholder="", name="id", value=customer._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete

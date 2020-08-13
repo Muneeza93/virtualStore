@@ -35,4 +35,14 @@ router.post("/customer", async (req, res) => {
           
 });
 
+// delete posts
+router.post('/delete', async (req,res) => {
+    try {
+      await Customers.deleteOne({_id: req.body.id })
+      res.redirect('back')
+    } catch (error) {
+       res.status(400).send("unable to delete to database");
+    }
+  });
+
 module.exports = router;

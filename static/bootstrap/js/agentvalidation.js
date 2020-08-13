@@ -11,12 +11,12 @@ agent_Form.addEventListener('submit',(e) => {
     // Retrieving the values of form elements 
     var firstname = document.agentForm.firstName.value;
     // var secondname = document.agentForm.secondname.value;
-    // var email = document.agentForm.email.value;
+    var email = document.agentForm.email.value;
     // var password = document.agentForm.password.value;
     // var retypepassword= document.agentForm.retypepassword.value;
     // var phone= document.agentForm.phone.value;
     // var employeeID= document.agentForm.employeeID.value;
-    // var nationalID= document.agentForm.nationalID.value;
+     var nationalID= document.agentForm.NationalID.value;
     // var hobbies = [];
     // var checkboxes = document.getElementsByName("hobbies[]");
     // for(var i=0; i < checkboxes.length; i++) {
@@ -29,7 +29,7 @@ agent_Form.addEventListener('submit',(e) => {
 
     
 	// Defining error variables with a default value
-    var fnameErr = true;
+    var fnameErr = emailErr =  nationalIDErr = true;
     
     // Validate first name
     if(firstname == "") {
@@ -57,19 +57,19 @@ agent_Form.addEventListener('submit',(e) => {
     //     }
     // }
     
-    // // Validate email address
-    // if(email == "") {
-    //     printError("emailErr", "Please enter your email address");
-    // } else {
-    //     // Regular expression for basic email validation
-    //     var regex = /^\S+@\S+\.\S+$/;
-    //     if(regex.test(email) === false) {
-    //         printError("emailErr", "Please enter a valid email address");
-    //     } else{
-    //         printError("emailErr", "");
-    //         emailErr = false;
-    //     }
-    // }
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
 
     // // Validate password
     // if(password == "") {
@@ -120,25 +120,26 @@ agent_Form.addEventListener('submit',(e) => {
     //     countryErr = false;
     // }
     
-    // // Validate national ID
-    // if(nationalID == "") {
-    //     printError("nationalIDErr", "Please fill in  your national ID");
-    // } else {
-    //     var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
-    //     if (regex.test(nationalID) === false) {
-    //         printError( "nationalIDErr", "Please fill in a valid your national ID");
-    //     } else {
-    //     printError("nationalIDErr", "");
-    //     nationalIDErr = false;
-    //   }
-    // }
+    // Validate national ID
+    if(nationalID == "") {
+        printError("nationalIDErr", "Please fill in a national ID");
+    } else {
+        var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
+        if (regex.test(nationalID) === false) {
+            printError( "nationalIDErr", "Please fill in a valid national ID");
+        } else {
+        printError("nationalIDErr", "");
+        nationalIDErr = false;
+      }
+    }
     
     // Prevent the form from being submitted if there are any errors
-    if((fnameErr) == true) {
+    if((fnameErr || emailErr || nationalIDErr) == true) {
         alert('failed')
-        return
+        e.preventDefault();
     } else {
         alert('successful')
+        e.currentTarget.submit();
     }
     // if((fnameErr || snameErr) == true) {
     //    e.preventDefault();
