@@ -11,9 +11,9 @@ block content
                 li
                     a.button(href='/index') Home
                 li
-                    a.button(href='') Products
+                    a.button(href='/details') Products
                 li
-                    a.button(href='') About
+                    a.button(href='/about') About
                 li
                     a.button(href='') Contact
                 .dropdown
@@ -29,11 +29,11 @@ block content
             form(name="agentForm" id="agents" action='/sales/salesAgent' method="POST")
                 .input-name
                     i.fa.fa-user.lock
-                    input.name(type='text' name='firstName' placeholder='Firstname')
+                    input.name(type='text' name='firstname' placeholder='Firstname')
                     #fnameErr.error
                     span
                         i.fa.fa-user.lock
-                        input.name(type='text' name='secondName' placeholder='Secondname')
+                        input.name(type='text' name='secondname' placeholder='Secondname')
                         #snameErr.error
                 .input-name
                     i.fa.fa-envelope.email
@@ -45,24 +45,24 @@ block content
                     #passwordErr.error
                 .input-name
                     i.fa.fa-lock.lock
-                    input.text-name(type='password' name='RetypePassword' placeholder='Re-type Password')
-                    #passwordErr.error
+                    input.text-name(type='password' name='retypepassword' placeholder='Re-type Password')
+                    #retypepasswordErr.error
                 .input-name
                     i.fa.fa-mobile.lock(aria-hidden='true')
                     input.text-name(type='tel' name='phone' placeholder='phone')
                     #phoneErr.error
                 .input-name
-                    input#male(type='checkbox' name='gender' value='male')
+                    input#male(type='checkbox' name='gender' value="gender")
                     label.gender(for='male') Male
-                    input#female(type='checkbox' name='gender' value='female')
+                    input#female(type='checkbox' name='gender' value="gender")
                     label.gender(for='female') Female
                 .input-name
-                    input.text-name(type='text' name='EmployeeID' placeholder='EmployeeID')
+                    input.text-name(type='text' name='employeeID' placeholder='EmployeeID')
                     #employeeIDErr.error
                 .input-name
-                    input.text-name(type='text' name='NationalID' placeholder='NationalID')
+                    input.text-name(type='text' name='nationalID' placeholder='NationalID')
                     #nationalIDErr.error
                 .input-name
-                    input.button(type='submit' name='submit' value='Submit')
+                    input.button(type='submit' value='Submit')
 
                 

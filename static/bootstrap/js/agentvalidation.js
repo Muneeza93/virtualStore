@@ -9,13 +9,14 @@ agent_Form.addEventListener('submit',(e) => {
     // Defining a function to validate form 
 
     // Retrieving the values of form elements 
-    var firstname = document.agentForm.firstName.value;
-    // var secondname = document.agentForm.secondname.value;
+    var firstname = document.agentForm.firstname.value;
+    var secondname = document.agentForm.secondname.value;
     var email = document.agentForm.email.value;
     // var password = document.agentForm.password.value;
     // var retypepassword= document.agentForm.retypepassword.value;
     // var phone= document.agentForm.phone.value;
     // var employeeID= document.agentForm.employeeID.value;
+<<<<<<< HEAD
      var nationalID= document.agentForm.NationalID.value;
     // var hobbies = [];
     // var checkboxes = document.getElementsByName("hobbies[]");
@@ -25,11 +26,19 @@ agent_Form.addEventListener('submit',(e) => {
     //         hobbies.push(checkboxes[i].value);
     //     }
     // }
+=======
+     var nationalID= document.agentForm.nationalID.value;
+    
+>>>>>>> app2
 
 
     
 	// Defining error variables with a default value
+<<<<<<< HEAD
     var fnameErr = emailErr =  nationalIDErr = true;
+=======
+    var fnameErr = snameErr = emailErr = nationalIDErr = true;
+>>>>>>> app2
     
     // Validate first name
     if(firstname == "") {
@@ -45,17 +54,17 @@ agent_Form.addEventListener('submit',(e) => {
     }
 
     //validate second name
-    // if(secondname == "") {
-    //     printError("snameErr", "Please enter your name");
-    // } else {
-    //     var regex = /^[a-zA-Z\s]+$/;                
-    //     if(regex.test(secondname) === false) {
-    //         printError("snameErr", "Please enter a valid second name");
-    //     } else {
-    //         printError("snameErr", "");
-    //         snameErr = false;
-    //     }
-    // }
+    if(secondname == "") {
+        printError("snameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(secondname) === false) {
+            printError("snameErr", "Please enter a valid second name");
+        } else {
+            printError("snameErr", "");
+            snameErr = false;
+        }
+    }
     
     // Validate email address
     if(email == "") {
@@ -74,30 +83,20 @@ agent_Form.addEventListener('submit',(e) => {
     // // Validate password
     // if(password == "") {
     //     printError("passwordErr", "Please enter password");
-    // } else {
-    //     // Regular expression for basic password validation
-    //     var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-    //     if(regex.test(password) === false) {
-    //         printError("passwordErr", "Please enter a password");
-    //     } else{
+    // }  else{
     //         printError("passwordErr", "");
     //         passwordErr = false;
     //     }
-    // }
+    
 
     // // Validate retype password
     // if(retypepassword == "") {
-    //     printError("passwordErr", "Please enter your email address");
-    // } else {
-    //     // Regular expression for basic email validation
-    //     var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-    //     if(regex.test(retypepassword) === false) {
-    //         printError("passwordErr", "Please enter a valid email address");
-    //     } else{
-    //         printError("passwordErr", "");
-    //         passwordErr = false;
+    //     printError("retypepasswordErr", "Please retype your password");
+    // }  else{
+    //         printError("retypepasswordErr", "");
+    //         retypepasswordErr = false;
     //     }
-    // }
+    
     
     // // Validate mobile number
     // if(phone == "") {
@@ -113,7 +112,7 @@ agent_Form.addEventListener('submit',(e) => {
     // }
     
     // // Validate employeeID
-    // if(employeeID == "Select") {
+    // if(employeeID == "") {
     //     printError("employeeIDErr", "Please select your employee ID");
     // } else {
     //     printError("employeeIDErr", "");
@@ -122,11 +121,19 @@ agent_Form.addEventListener('submit',(e) => {
     
     // Validate national ID
     if(nationalID == "") {
+<<<<<<< HEAD
         printError("nationalIDErr", "Please fill in a national ID");
     } else {
         var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
         if (regex.test(nationalID) === false) {
             printError( "nationalIDErr", "Please fill in a valid national ID");
+=======
+        printError("nationalIDErr", "Please fill in  your national ID");
+    } else {
+        var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
+        if (regex.test(nationalID) === false) {
+            printError( "nationalIDErr", "Please fill in a valid your national ID");
+>>>>>>> app2
         } else {
         printError("nationalIDErr", "");
         nationalIDErr = false;
@@ -134,7 +141,11 @@ agent_Form.addEventListener('submit',(e) => {
     }
     
     // Prevent the form from being submitted if there are any errors
+<<<<<<< HEAD
     if((fnameErr || emailErr || nationalIDErr) == true) {
+=======
+    if((fnameErr || snameErr || emailErr || nationalIDErr) == true) {
+>>>>>>> app2
         alert('failed')
         e.preventDefault();
     } else {

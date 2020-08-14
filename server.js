@@ -17,6 +17,8 @@ const Products = require('./routes/productsRoute');
 
 const Users = require('./routes/users');
 const Customers = require('./routes/clientRoute');
+const Details = require('./routes/detailsroute');
+const About = require('./routes/aboutroute');
 
 // //passport config
 // require('./config/passport')(passport);
@@ -53,6 +55,8 @@ app.use('/product',Products);
 app.use('/sales',SalesRoutes);
 app.use('/users',Users);
 app.use('/customer',Customers);
+app.use('/details',Details);
+app.use('/about',About);
 
 // //express session
 // app.use(session({
