@@ -16,29 +16,13 @@ agent_Form.addEventListener('submit',(e) => {
     // var retypepassword= document.agentForm.retypepassword.value;
     // var phone= document.agentForm.phone.value;
     // var employeeID= document.agentForm.employeeID.value;
-<<<<<<< HEAD
-     var nationalID= document.agentForm.NationalID.value;
-    // var hobbies = [];
-    // var checkboxes = document.getElementsByName("hobbies[]");
-    // for(var i=0; i < checkboxes.length; i++) {
-    //     if(checkboxes[i].checked) {
-    //         // Populate hobbies array with selected values
-    //         hobbies.push(checkboxes[i].value);
-    //     }
-    // }
-=======
      var nationalID= document.agentForm.nationalID.value;
     
->>>>>>> app2
 
 
     
 	// Defining error variables with a default value
-<<<<<<< HEAD
-    var fnameErr = emailErr =  nationalIDErr = true;
-=======
     var fnameErr = snameErr = emailErr = nationalIDErr = true;
->>>>>>> app2
     
     // Validate first name
     if(firstname == "") {
@@ -121,19 +105,11 @@ agent_Form.addEventListener('submit',(e) => {
     
     // Validate national ID
     if(nationalID == "") {
-<<<<<<< HEAD
-        printError("nationalIDErr", "Please fill in a national ID");
-    } else {
-        var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
-        if (regex.test(nationalID) === false) {
-            printError( "nationalIDErr", "Please fill in a valid national ID");
-=======
         printError("nationalIDErr", "Please fill in  your national ID");
     } else {
         var regex = /^[A-Z]{3}[0-9]{1,8}[A-Z]*$/;
         if (regex.test(nationalID) === false) {
             printError( "nationalIDErr", "Please fill in a valid your national ID");
->>>>>>> app2
         } else {
         printError("nationalIDErr", "");
         nationalIDErr = false;
@@ -141,11 +117,7 @@ agent_Form.addEventListener('submit',(e) => {
     }
     
     // Prevent the form from being submitted if there are any errors
-<<<<<<< HEAD
-    if((fnameErr || emailErr || nationalIDErr) == true) {
-=======
     if((fnameErr || snameErr || emailErr || nationalIDErr) == true) {
->>>>>>> app2
         alert('failed')
         e.preventDefault();
     } else {
